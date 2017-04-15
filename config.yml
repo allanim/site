@@ -1,0 +1,3 @@
+source: 'src'
+publish: 'dist'
+temporary: '.tmp'
