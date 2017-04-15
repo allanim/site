@@ -251,7 +251,7 @@
 		
 	/* Social Feed */
 	.social-feed ul li,
-	.null-instagram-feed ul li, {
+	.null-instagram-feed ul li {
 		width: 50%; 
 		}
 	.social-feed ul li img,
