@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js one-page-layout" data-mobile-classic-layout="true" data-classic-layout="false"
+      data-prev-animation="16" data-next-animation="15" data-random-animation="false">
+
+<%- include('_head'); %>
+
+<body>
+
+<!-- PAGE -->
+<div id="page" class="hfeed site">
+
+    <%- include('_header', {navType: '_nav-toggle'}); %>
+    <%- include(content); %>
+
+</div>
+<!-- PAGE -->
+
+<!-- PORTFOLIO SINGLE AJAX CONTENT CONTAINER -->
+<div class="p-overlay"></div>
+<div class="p-overlay"></div>
+
+
+<!-- ALERT : used for contact form mail delivery alert -->
+<div class="site-alert animated"></div>
+
+<%- include('_script'); %>
+
+</body>
+</html>

@@ -20,6 +20,7 @@ const clean = require('gulp-clean');
 const imagemin = require('gulp-imagemin');
 const htmlminify = require("gulp-html-minify");
 const uglify = require('gulp-uglify');
+const ejs = require('gulp-ejs');
 
 // markdown to json
 const mdToJson = require('gulp-markdown-to-json');
@@ -137,6 +138,21 @@ gulp.task('build:markdown', function () {
     return markdownConvertTask('contents', ['**/*.md']);
 });
 
+gulp.task("ejs", function () {
+    // var pages = ['index', '404'];
+    var pages = [
+        {source: 'allan', target: 'index', layout: 'one-page'},
+        {source: '404', target: '404', layout: 'single-page'}
+    ];
+    for (var i = 0; i < pages.length; i++) {
+        gulp.src([config.source + "/_layout-" + pages[i].layout + ".ejs"])
+            .pipe(plumber())
+            .pipe(ejs({content: pages[i].source}))
+            .pipe(rename(pages[i].target + ".html"))
+            .pipe(gulp.dest(config.publish));
+    }
+});
+
 gulp.task('library', function () {
     var css = gulp.src(config.source + '/css/bootstrap.min.css')
         .pipe(gulp.dest(config.publish + '/css'));
@@ -153,7 +169,7 @@ gulp.task('clean', function (cb) {
 // Build production files, the default task
 gulp.task('default', function (cb) {
     runSequence('clean', 'library',
-        ['build:css', 'build:fonts', 'build:images', 'build:html', 'build:js', 'build:markdown'],
+        ['build:css', 'build:fonts', 'build:images', 'build:js', 'build:markdown', 'ejs'],
         cb);
 });
 
@@ -185,7 +201,7 @@ gulp.task('serve', ['build:css', 'build:js', 'build:markdown'], function () {
         }
     });
 
-    gulp.watch([config.source + '/**/*.html'], reload);
+    gulp.watch([config.source + '/**/*.ejs'], reload);
     gulp.watch([config.source + '/css/**/*.css'], reload);
     gulp.watch([config.source + '/js/main.js'], reload);
     gulp.watch([config.source + '/images/**/*'], reload);
