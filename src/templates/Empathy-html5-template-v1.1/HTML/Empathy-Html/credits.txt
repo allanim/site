@@ -1,0 +1,67 @@
+
+
+
+
+CREDITS
+- thanks to the authors of this beautiful resources
+
+Jarallax
+https://github.com/nk-o/jarallax
+
+Css Animation
+http://bouncejs.com/
+
+Magnific Popup
+http://dimsemenov.com/plugins/magnific-popup/
+
+Social-Photo-Stream-jQuery-Plugin
+https://github.com/pixel-industry/Social-Photo-Stream-jQuery-Plugin
+
+Lulu Icons
+http://www.1001freedownloads.com/free-vector/lulu-icons-set-1
+http://www.1001freedownloads.com/free-vector/lulu-icons-set-2
+
+CSS Ribbon
+http://codepen.io/simoncoudeville/pen/Apxem
+
+Stroke 7 Icon Font Set
+http://themes-pixeden.com/font-demos/7-stroke/index.html
+
+Typist
+https://github.com/EagerApps/Typist
+
+nProgress
+http://ricostacruz.com/nprogress/
+
+Page Transitions
+https://github.com/codrops/PageTransitions
+
+Isotope
+http://isotope.metafizzy.co/
+
+imagesLoaded
+https://github.com/desandro/imagesloaded
+
+jQuery Address Plugin
+http://www.asual.com/jquery/address/
+
+FITVIDS.JS
+http://fitvidsjs.com/
+
+Uniform
+https://github.com/pixelmatrix/uniform
+
+FastClick
+https://github.com/ftlabs/fastclick
+
+Google Map Styler
+https://snazzymaps.com/style/29/light-monochrome
+
+Preloader
+http://preloaders.net/
+
+Bootstrap
+http://getbootstrap.com/
+
+jQuery
+http://jquery.com/

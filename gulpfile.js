@@ -1,7 +1,4 @@
-'use strict';
-
 // Include gulp & tools we'll use
-const yml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
 const runSequence = require('run-sequence');
@@ -12,7 +9,7 @@ const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const changed = require('gulp-changed');
 const autoprefixer = require('gulp-autoprefixer');
-const cssmin = require('gulp-cssmin');
+const cssmin = require('gulp-minify-css');
 const rename = require('gulp-rename');
 const size = require('gulp-size');
 const concat = require('gulp-concat');
@@ -21,6 +18,8 @@ const imagemin = require('gulp-imagemin');
 const htmlminify = require("gulp-html-minify");
 const uglify = require('gulp-uglify');
 const ejs = require('gulp-ejs');
+const gutil = require('gulp-util');
+
 
 // markdown to json
 const mdToJson = require('gulp-markdown-to-json');
@@ -30,10 +29,19 @@ marked.setOptions({
     smartypants: true
 });
 
-// Site config
-var config = yml.safeLoad(fs.readFileSync('./config.yml', 'utf8'));
+// build config
+const config = {
+    source: 'src',
+    contents: 'contents',
+    publish: 'dist',
+    temporary: '.tmp',
+    css: {
+        files: ['./src/css/style*.css']
+    },
+    asserts: ['./src/fonts*/**/*.{eot,svg,ttf,woff,woff2}', './src/images*/**']
+};
 
-var AUTOPREFIXER_BROWSERS = [
+const AUTOPREFIXER_BROWSERS = [
     'ie >= 10',
     'ie_mob >= 10',
     'ff >= 30',
@@ -46,7 +54,7 @@ var AUTOPREFIXER_BROWSERS = [
 ];
 
 // Task for stylesheet
-var cssOptimizeTask = function (cssPath, sources) {
+const cssOptimizeTask = function (cssPath, sources) {
     return gulp.src(sources.map(function (source) {
         return path.join(config.source, cssPath, source);
     })).pipe(plumber())
@@ -61,7 +69,7 @@ var cssOptimizeTask = function (cssPath, sources) {
 };
 
 // Task fo image optimize
-var imageOptimizeTask = function (imagePath, sources) {
+const imageOptimizeTask = function (imagePath, sources) {
     return gulp.src(sources.map(function (source) {
         return path.join(config.source, imagePath, source);
     })).pipe(plumber())
@@ -73,17 +81,18 @@ var imageOptimizeTask = function (imagePath, sources) {
         .pipe(size({title: 'image optimized path : ' + path.join(config.publish, imagePath)}));
 };
 
-var markdownConvertTask = function (markdownPath, sources) {
+const markdownConvertTask = function (markdownPath, sources) {
     return gulp.src(sources.map(function (source) {
-        return path.join(config.source, markdownPath, source);
+        return path.join(config.contents, source);
     })).pipe(plumber())
-        .pipe(mdToJson(marked))
+        .pipe(gutil.buffer())
+        .pipe(mdToJson(marked, 'resume.json'))
         .pipe(gulp.dest(path.join(config.temporary, markdownPath)))
         .pipe(gulp.dest(path.join(config.publish, markdownPath)))
         .pipe(size({title: 'markdown converted path : ' + path.join(config.publish, markdownPath)}));
 };
 
-var htmlOptimizeTask = function (htmlPath, sources) {
+const htmlOptimizeTask = function (htmlPath, sources) {
     return gulp.src(sources.map(function (source) {
         return path.join(config.source, htmlPath, source);
     })).pipe(plumber())
@@ -92,7 +101,7 @@ var htmlOptimizeTask = function (htmlPath, sources) {
         .pipe(size({title: 'html optimized path : ' + path.join(config.publish, htmlPath)}));
 };
 
-var jsTask = function (jsPath, sources) {
+const jsTask = function (jsPath, sources) {
     return gulp.src(sources.map(function (source) {
         return path.join(config.source, jsPath, source);
     })).pipe(plumber())
@@ -101,75 +110,72 @@ var jsTask = function (jsPath, sources) {
         .pipe(size({title: 'js path : ' + path.join(config.publish, jsPath)}));
 };
 
-// Build css
-gulp.task('build:css', function (cb) {
+gulp.task('build:css', function () {
     return cssOptimizeTask("css", ['768.css', 'align.css', 'animations.css', 'main.css']);
 });
 
-// build font css
-gulp.task('font-css', function () {
+gulp.task('build:font-css', function () {
     return cssOptimizeTask("fonts", ['**/*.css']);
 });
 
-// copy font
-gulp.task('build:fonts', ['font-css'], function () {
+gulp.task('build:fonts', ['build:font-css'], function () {
     return gulp.src([config.source + '/fonts/**/*.{eot,svg,ttf,woff,woff2}'])
         .pipe(gulp.dest(config.publish + '/fonts'))
         .pipe(size({title: 'fonts'}));
 });
 
-// copy images
 gulp.task('build:images', function () {
     return imageOptimizeTask('images', ['**/*']);
 });
 
-// copy html
 gulp.task('build:html', function () {
     return htmlOptimizeTask('', ['**/*.html']);
 });
 
-// copy html
 gulp.task('build:js', function () {
     return jsTask('js', ['main.js']);
 });
 
-// markdown convert to json
 gulp.task('build:markdown', function () {
     return markdownConvertTask('contents', ['**/*.md']);
 });
 
-gulp.task("ejs", function () {
+gulp.task("build:ejs", function () {
     // var pages = ['index', '404'];
-    var pages = [
+    const pages = [
         {source: 'allan', target: 'index', layout: 'one-page'},
         {source: '404', target: '404', layout: 'single-page'}
     ];
-    for (var i = 0; i < pages.length; i++) {
+    for (let i = 0, length = pages.length; i < length; i++) {
         gulp.src([config.source + "/_layout-" + pages[i].layout + ".ejs"])
             .pipe(plumber())
             .pipe(ejs({content: pages[i].source}))
+            .pipe(htmlminify())
             .pipe(rename(pages[i].target + ".html"))
             .pipe(gulp.dest(config.publish));
     }
 });
 
-gulp.task('library', function () {
-    var css = gulp.src(config.source + '/css/bootstrap.min.css')
+gulp.task('build:asserts', function () {
+    // css library
+    gulp.src(config.source + '/css/bootstrap.min.css')
         .pipe(gulp.dest(config.publish + '/css'));
-    var js = gulp.src([config.source + '/js/**/*.js', '!' + config.source + '/main.js'])
+
+    // js library
+    gulp.src([config.source + '/js/**/*.js', '!' + config.source + '/main.js'])
         .pipe(gulp.dest(config.publish + '/js'));
 });
 
 // Clean output directory
-gulp.task('clean', function (cb) {
+gulp.task('clean', function () {
     return gulp.src([config.temporary, config.publish], {read: false})
         .pipe(clean());
 });
 
 // Build production files, the default task
 gulp.task('default', function (cb) {
-    runSequence('clean', 'library',
-        ['build:css', 'build:fonts', 'build:images', 'build:js', 'build:markdown', 'ejs'],
+    runSequence('clean', 'build:asserts',
+        ['build:css', 'build:fonts', 'build:images', 'build:js', 'build:markdown', 'build:ejs'],
         cb);
 });
 
