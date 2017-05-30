@@ -133,7 +133,7 @@ gulp.task('build:html', function () {
 });
 
 gulp.task('build:js', function () {
-    return jsTask('js', ['main.js']);
+    return jsTask('js', ['main.js','language.js']);
 });
 
 gulp.task('build:markdown', function () {
@@ -162,7 +162,9 @@ gulp.task('build:asserts', function () {
         .pipe(gulp.dest(config.publish + '/css'));
 
     // js library
-    gulp.src([config.source + '/js/**/*.js', '!' + config.source + '/main.js'])
+    gulp.src([config.source + '/js/**/*.{js,css,svg}',
+        '!' + config.source + '/main.js',
+        '!' + config.source + '/language.js'])
         .pipe(gulp.dest(config.publish + '/js'));
 });
 
@@ -173,12 +175,13 @@ gulp.task('clean', function () {
 });
 
 // Build production files, the default task
-gulp.task('default', function (cb) {
+gulp.task('build', function (cb) {
     runSequence('clean', 'build:asserts',
         ['build:css', 'build:fonts', 'build:images', 'build:js', 'build:markdown', 'build:ejs'],
         cb);
 });
 
+gulp.task('default', ['build']);
 
 // Watch files for changes & reload
 gulp.task('serve', ['build:css', 'build:js', 'build:markdown'], function () {
