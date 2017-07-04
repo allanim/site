@@ -1566,7 +1566,7 @@ a.button.big i {
 /* Magnific Popup */
 button.mfp-close,
 button.mfp-arrow:before {
-	background: url(../js/jquery.magnific-popup/default-skin.svg) 0 0 no-repeat; background-size: 264px 88px;
+	background: url(default-skin.svg) 0 0 no-repeat; background-size: 264px 88px;
 	}
 button.mfp-close {
 	width: 44px; height: 44px; color: transparent; background-position: 0 -44px;

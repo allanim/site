@@ -16,6 +16,7 @@ const concat = require('gulp-concat');
 const clean = require('gulp-clean');
 const imagemin = require('gulp-imagemin');
 const htmlminify = require("gulp-html-minify");
+const processhtml = require('gulp-processhtml');
 const uglify = require('gulp-uglify');
 const ejs = require('gulp-ejs');
 const gutil = require('gulp-util');
@@ -35,6 +36,7 @@ const config = {
     contents: 'contents',
     publish: 'dist',
     temporary: '.tmp',
+    bowerComponents: 'bower_components',
     css: {
         files: ['./src/css/style*.css']
     },
@@ -60,10 +62,7 @@ const cssOptimizeTask = function (cssPath, sources) {
     })).pipe(plumber())
         .pipe(changed(cssPath, {extension: '.css'}))
         .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe(gulp.dest(path.join(config.temporary, cssPath)))
         .pipe(cssmin())
-        // .pipe(concat('style.css'))
-        // .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(path.join(config.publish, cssPath)))
         .pipe(size({title: 'css path : ' + path.join(config.publish, cssPath)}));
 };
@@ -110,37 +109,37 @@ const jsTask = function (jsPath, sources) {
         .pipe(size({title: 'js path : ' + path.join(config.publish, jsPath)}));
 };
 
-gulp.task('build:css', function () {
+gulp.task('build-css', function () {
     return cssOptimizeTask("css", ['768.css', 'align.css', 'animations.css', 'main.css']);
 });
 
-gulp.task('build:font-css', function () {
+gulp.task('build-font-css', function () {
     return cssOptimizeTask("fonts", ['**/*.css']);
 });
 
-gulp.task('build:fonts', ['build:font-css'], function () {
+gulp.task('build-fonts', ['build-font-css'], function () {
     return gulp.src([config.source + '/fonts/**/*.{eot,svg,ttf,woff,woff2}'])
         .pipe(gulp.dest(config.publish + '/fonts'))
         .pipe(size({title: 'fonts'}));
 });
 
-gulp.task('build:images', function () {
+gulp.task('build-images', function () {
     return imageOptimizeTask('images', ['**/*']);
 });
 
-gulp.task('build:html', function () {
+gulp.task('build-html', function () {
     return htmlOptimizeTask('', ['**/*.html']);
 });
 
-gulp.task('build:js', function () {
-    return jsTask('js', ['main.js','language.js']);
+gulp.task('build-js', function () {
+    return jsTask('js', ['main.js', 'language.js']);
 });
 
-gulp.task('build:markdown', function () {
+gulp.task('build-markdown', function () {
     return markdownConvertTask('contents', ['**/*.md']);
 });
 
-gulp.task("build:ejs", function () {
+gulp.task("build-ejs", function () {
     // var pages = ['index', '404'];
     const pages = [
         {source: 'allan', target: 'index', layout: 'one-page'},
@@ -150,22 +149,47 @@ gulp.task("build:ejs", function () {
         gulp.src([config.source + "/_layout-" + pages[i].layout + ".ejs"])
             .pipe(plumber())
             .pipe(ejs({content: pages[i].source}))
-            .pipe(htmlminify())
             .pipe(rename(pages[i].target + ".html"))
+            .pipe(gulp.dest(config.temporary))
+            .pipe(processhtml())
+            // .pipe(htmlminify())
             .pipe(gulp.dest(config.publish));
     }
 });
 
-gulp.task('build:asserts', function () {
-    // css library
-    gulp.src(config.source + '/css/bootstrap.min.css')
-        .pipe(gulp.dest(config.publish + '/css'));
+gulp.task('build-asserts', function () {
+    // // css library
+    // gulp.src(config.source + '/css/bootstrap.min.css')
+    //     .pipe(gulp.dest(config.publish + '/css'));
+    //
+    // // js library
+    // gulp.src([config.source + '/js/**/*.{js,css,svg}',
+    //     '!' + config.source + '/main.js',
+    //     '!' + config.source + '/language.js'])
+    //     .pipe(gulp.dest(config.publish + '/js'));
 
-    // js library
-    gulp.src([config.source + '/js/**/*.{js,css,svg}',
-        '!' + config.source + '/main.js',
-        '!' + config.source + '/language.js'])
-        .pipe(gulp.dest(config.publish + '/js'));
+    gulp.src([config.bowerComponents + '/jquery/dist/jquery.*',
+        config.bowerComponents + '/jquery-migrate/jquery-migrate.*',
+        config.bowerComponents + '/jquery.cookie/jquery.cookie.*',
+        config.bowerComponents + '/respond/dest/respond.*',
+        config.bowerComponents + '/selectivizr/selectivizr.*'])
+        .pipe(gulp.dest(config.publish + '/libs'))
+        .pipe(size({title: 'copy asserts'}));
+
+    gulp.src([config.bowerComponents + '/jquery.cookie/jquery.cookie.js',
+        config.bowerComponents + '/selectivizr/selectivizr.js'])
+        .pipe(plumber())
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(config.publish + '/libs'))
+        .pipe(size({title: 'copy asserts'}));
+
+    // gulp.src([config.bowerComponents + '/jquery.cookie/*.js'])
+    //     .pipe(gulp.dest(config.temporary + '/libs'))
+    //     .pipe(plumber())
+    //     .pipe(uglify())
+    //     .pipe(gulp.dest(config.publish + '/libs'))
+    //     .pipe(size({title: 'copy asserts'}));
 });
 
 // Clean output directory
@@ -176,15 +200,15 @@ gulp.task('clean', function () {
 
 // Build production files, the default task
 gulp.task('build', function (cb) {
-    runSequence('clean', 'build:asserts',
-        ['build:css', 'build:fonts', 'build:images', 'build:js', 'build:markdown', 'build:ejs'],
+    runSequence('clean', 'build-asserts',
+        ['build-css', 'build-fonts', 'build-images', 'build-js', 'build-markdown', 'build-ejs'],
         cb);
 });
 
 gulp.task('default', ['build']);
 
 // Watch files for changes & reload
-gulp.task('serve', ['build:css', 'build:js', 'build:markdown'], function () {
+gulp.task('serve', ['build-markdown', 'build-ejs'], function () {
     browserSync({
         port: 5000,
         notify: false,
@@ -205,20 +229,19 @@ gulp.task('serve', ['build:css', 'build:js', 'build:markdown'], function () {
             baseDir: ['.tmp', config.source],
             middleware: [historyApiFallback()],
             routes: {
-                //'/lib': filePath.bowerComponents
+                '/libs': config.bowerComponents
             }
         }
     });
 
-    gulp.watch([config.source + '/**/*.ejs'], reload);
+    gulp.watch([config.source + '/**/*.ejs'], ['build-ejs', reload]);
     gulp.watch([config.source + '/css/**/*.css'], reload);
     gulp.watch([config.source + '/js/main.js'], reload);
-    gulp.watch([config.source + '/images/**/*'], reload);
     gulp.watch([config.source + '/contents/**/*'], reload);
 });
 
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function () {
+gulp.task('serve-dist', ['default'], function () {
     browserSync({
         port: 5001,
         notify: false,
