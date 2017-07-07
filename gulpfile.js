@@ -262,7 +262,7 @@ gulp.task('serve', ['build-markdown', 'build-ejs'], function () {
 
     gulp.watch([config.source + '/**/*.ejs'], ['build-ejs', reload]);
     gulp.watch([config.source + '/css/**/*.css'], reload);
-    gulp.watch([config.source + '/js/main.js'], reload);
+    gulp.watch([config.source + '/js/**/*.js'], reload);
     gulp.watch([config.source + '/contents/**/*'], reload);
 });
 
