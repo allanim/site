@@ -33,7 +33,7 @@ marked.setOptions({
 // build config
 const config = {
     source: 'src',
-    contents: 'contents',
+    contents: 'src/contents',
     publish: 'dist',
     temporary: '.tmp',
     bowerComponents: 'bower_components',
@@ -63,6 +63,7 @@ const cssOptimizeTask = function (cssPath, sources) {
         .pipe(changed(cssPath, {extension: '.css'}))
         .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
         .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(path.join(config.publish, cssPath)))
         .pipe(size({title: 'css path : ' + path.join(config.publish, cssPath)}));
 };
@@ -105,6 +106,7 @@ const jsTask = function (jsPath, sources) {
         return path.join(config.source, jsPath, source);
     })).pipe(plumber())
         .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(path.join(config.publish, jsPath)))
         .pipe(size({title: 'js path : ' + path.join(config.publish, jsPath)}));
 };
@@ -168,21 +170,45 @@ gulp.task('build-asserts', function () {
     //     '!' + config.source + '/language.js'])
     //     .pipe(gulp.dest(config.publish + '/js'));
 
-    gulp.src([config.bowerComponents + '/jquery/dist/jquery.*',
-        config.bowerComponents + '/jquery-migrate/jquery-migrate.*',
-        config.bowerComponents + '/jquery.cookie/jquery.cookie.*',
-        config.bowerComponents + '/respond/dest/respond.*',
-        config.bowerComponents + '/selectivizr/selectivizr.*'])
+    // copy assert
+    gulp.src([config.source + '/libs/**/*',
+        config.bowerComponents + '/jquery/dist/jquery.min.*',
+        config.bowerComponents + '/jquery-migrate/jquery-migrate.min.*',
+        config.bowerComponents + '/bootstrap/dist/js/bootstrap.min.*',
+        config.bowerComponents + '/bootstrap/dist/{css,fonts}/**/{bootstrap.min.*,*icons*}',
+        config.bowerComponents + '/respond/dest/respond.min.*',
+        config.bowerComponents + '/magnific-popup/dist/*.magnific-popup.min.*',
+        config.bowerComponents + '/jquery.uniform/dist/*.uniform.min.*',
+        config.bowerComponents + '/jquery.uniform/themes/default/{css,images}/**/*.{min.css,png}',
+        config.bowerComponents + '/imagesloaded/imagesloaded.pkgd.min.*',
+        config.bowerComponents + '/isotope/dist/isotope.pkgd.min.*',
+        config.bowerComponents + '/jquery-validation/dist/jquery.validate.min.*',
+        config.bowerComponents + '/jarallax/dist/*.min.js'])
         .pipe(gulp.dest(config.publish + '/libs'))
         .pipe(size({title: 'copy asserts'}));
 
+    // js uglify
     gulp.src([config.bowerComponents + '/jquery.cookie/jquery.cookie.js',
-        config.bowerComponents + '/selectivizr/selectivizr.js'])
+        config.bowerComponents + '/selectivizr/selectivizr.js',
+        config.bowerComponents + '/nprogress/nprogress.js',
+        config.bowerComponents + '/fastclick/lib/fastclick.js',
+        config.bowerComponents + '/fitvids/jquery.fitvids.js',
+        config.bowerComponents + '/socialstream/socialstream.jquery.js',
+        config.bowerComponents + '/jquery-address/src/jquery.address.js'])
         .pipe(plumber())
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(config.publish + '/libs'))
-        .pipe(size({title: 'copy asserts'}));
+        .pipe(size({title: 'copy js asserts'}));
+
+    // css minify
+    gulp.src([config.bowerComponents + '/nprogress/nprogress.css',
+        config.bowerComponents + '/magnific-popup/dist/magnific-popup.css'])
+        .pipe(plumber())
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(config.publish + '/libs/css'))
+        .pipe(size({title: 'copy js asserts'}));
 
     // gulp.src([config.bowerComponents + '/jquery.cookie/*.js'])
     //     .pipe(gulp.dest(config.temporary + '/libs'))
@@ -229,7 +255,7 @@ gulp.task('serve', ['build-markdown', 'build-ejs'], function () {
             baseDir: ['.tmp', config.source],
             middleware: [historyApiFallback()],
             routes: {
-                '/libs': config.bowerComponents
+                '/bower_components': config.bowerComponents
             }
         }
     });

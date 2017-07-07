@@ -189,7 +189,8 @@ var portfolioKeyword;
 				
 			google.maps.event.addDomListener(window, 'load', initializeMap);
 		
-			function initializeMap() {
+			//noinspection JSAnnotator
+            function initializeMap() {
 					var latitude = mapCanvas.data("latitude");
 					var longitude = mapCanvas.data("longitude");
 					var zoom = mapCanvas.data("zoom");

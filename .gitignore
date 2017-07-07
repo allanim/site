@@ -240,6 +240,3 @@ $RECYCLE.BIN/
 # this site
 dist
 .tmp
-
-## bower package
-src/libs/
