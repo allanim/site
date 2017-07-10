@@ -8,5 +8,16 @@
     "map": "맵",
     "contact": "연락처",
     "search": "검색"
+  },
+  "contact": {
+    "socialize": "소셜정보",
+    "reach": "연락정보",
+    "sendmail": "메일 보내기",
+    "mail": {
+      "name":"이름",
+      "email":"메일",
+      "message":"메세지",
+      "send":"송신",
+      "sending":"송신중."    }
   }
 }

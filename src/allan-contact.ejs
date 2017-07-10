@@ -16,7 +16,7 @@
             <!-- section-title -->
             <div class="section-title center">
                 <h2>
-                    <i>Let's Socialize</i>
+                    <i data-i18n="contact.socialize">Let's Socialize</i>
                 </h2>
             </div>
             <!-- section-title -->
@@ -35,7 +35,7 @@
             <!-- section-title -->
             <div class="section-title center">
                 <h2>
-                    <i>Reach Me</i>
+                    <i data-i18n="contact.reach">Reach Me</i>
                 </h2>
             </div>
             <!-- section-title -->
@@ -45,7 +45,7 @@
             <div class="row">
 
                 <!-- column 3/12 -->
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-xs-6 col-sm-4">
 
                     <!-- fun-fact -->
                     <div class="fun-fact">
@@ -58,20 +58,7 @@
                 <!-- column 3/12 -->
 
                 <!-- column 3/12 -->
-                <div class="col-xs-6 col-sm-3">
-
-                    <!-- fun-fact -->
-                    <div class="fun-fact">
-                        <i class="pe-7s-call"></i>
-                        <h4>Tel : +123 456 78900</h4>
-                    </div>
-                    <!-- fun-fact -->
-
-                </div>
-                <!-- column 3/12 -->
-
-                <!-- column 3/12 -->
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-xs-6 col-sm-4">
 
                     <!-- fun-fact -->
                     <div class="fun-fact">
@@ -84,12 +71,12 @@
                 <!-- column 3/12 -->
 
                 <!-- column 3/12 -->
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-xs-6 col-sm-4">
 
                     <!-- fun-fact -->
                     <div class="fun-fact">
-                        <i class="pe-7s-check"></i>
-                        <h4>Software Engineer</h4>
+                        <i class="pe-7s-chat"></i>
+                        <h4>messenger : <a href="http://m.me/allan.syim" target="_self">m.me/allan.syim</a></h4>
                     </div>
                     <!-- fun-fact -->
 
@@ -103,7 +90,7 @@
             <!-- section-title -->
             <div class="section-title center">
                 <h2>
-                    <i>Drop Me A Line</i>
+                    <i data-i18n="contact.sendmail">Drop Me A Line</i>
                 </h2>
             </div>
             <!-- section-title -->
@@ -118,25 +105,27 @@
                     <input type="hidden" name="subject" id="subject" value="You have a new message from Photographer!">
 
                     <p>
-                        <label for="name">NAME</label>
+                        <label for="name" data-i18n="contact.mail.name">NAME</label>
                         <input type="text" name="name" id="name" class="required">
                     </p>
 
                     <p>
-                        <label for="email">EMAIL</label>
+                        <label for="email" data-i18n="contact.mail.email">EMAIL</label>
                         <input type="text" name="email" id="email" class="required email">
                     </p>
 
-                    <p class="antispam">Leave this empty if you are a human :
-                        <br/><input name="url"/>
-                    </p>
-
                     <p>
-                        <label for="message">MESSAGE</label>
+                        <label for="message" data-i18n="contact.mail.message">MESSAGE</label>
                         <textarea name="message" id="message" class="required"></textarea>
                     </p>
 
+                    <p class="antispam">
+                    <div class="g-recaptcha" data-sitekey="6LfCiygUAAAAAHsS4obcnoHqK0XaAN1cI-jso2FI"></div>
+                    </p>
+
                     <p>
+                        <br/><br/>
+                        <br/><br/>
                         <button class="submit button">Send</button>
                     </p>
 
@@ -148,7 +137,7 @@
 
             <!-- GOOGLE MAP -->
             <div class="map">
-                <div data-latitude="-25.363882" data-longitude="131.044922" data-zoom="5"
+                <div data-latitude="35.6402691" data-longitude="139.7687958" data-zoom="6"
                      data-marker-image="images/site/marker.png" id="map-canvas" class="map-canvas"></div>
             </div>
             <!-- GOOGLE MAP -->

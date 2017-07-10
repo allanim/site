@@ -8,6 +8,18 @@
     "map": "Map",
     "contact": "Contact",
     "search": "Search"
+  },
+  "contact": {
+    "socialize": "Let's Socialize",
+    "reach": "Reach Me",
+    "sendmail": "Drop Me A Line",
+    "mail": {
+      "name":"Name",
+      "email":"Email",
+      "message":"Message",
+      "send":"Send",
+      "sending":"Sending..."
+    }
   }
 }
 
