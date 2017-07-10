@@ -1,0 +1,13 @@
+{
+  "name": "Allan Im",
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "resume": "Resume",
+    "project": "Projects",
+    "map": "Map",
+    "contact": "Contact",
+    "search": "Search"
+  }
+}
+

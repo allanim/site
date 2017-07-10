@@ -1,0 +1,12 @@
+{
+  "name": "임성엽",
+  "nav": {
+    "home": "처음으로",
+    "about": "나에 대해서",
+    "resume": "이력",
+    "project": "프로젝트",
+    "map": "맵",
+    "contact": "연락처",
+    "search": "검색"
+  }
+}

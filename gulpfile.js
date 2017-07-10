@@ -134,7 +134,7 @@ gulp.task('build-html', function () {
 });
 
 gulp.task('build-js', function () {
-    return jsTask('js', ['main.js', 'language.js']);
+    return jsTask('js', ['main.js', 'locales.js']);
 });
 
 gulp.task('build-markdown', function () {
@@ -167,13 +167,16 @@ gulp.task('build-asserts', function () {
     // // js library
     // gulp.src([config.source + '/js/**/*.{js,css,svg}',
     //     '!' + config.source + '/main.js',
-    //     '!' + config.source + '/language.js'])
+    //     '!' + config.source + '/locales.js'])
     //     .pipe(gulp.dest(config.publish + '/js'));
 
     // copy assert
     gulp.src([config.source + '/libs/**/*',
         config.bowerComponents + '/jquery/dist/jquery.min.*',
         config.bowerComponents + '/jquery-migrate/jquery-migrate.min.*',
+        config.bowerComponents + '/i18next/i18next.min.*',
+        config.bowerComponents + '/i18next-xhr-backend/i18nextXHRBackend.min.*',
+        config.bowerComponents + '/jquery-i18next/jquery-i18next.min.*',
         config.bowerComponents + '/bootstrap/dist/js/bootstrap.min.*',
         config.bowerComponents + '/bootstrap/dist/{css,fonts}/**/{bootstrap.min.*,*icons*}',
         config.bowerComponents + '/respond/dest/respond.min.*',

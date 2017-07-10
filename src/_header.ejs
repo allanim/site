@@ -6,7 +6,7 @@
     <!-- header-wrap -->
     <div class="header-wrap">
         <img src="https://s.gravatar.com/avatar/4fd493d8608b0567e5cc97ee7a703b0a?s=160" alt="avatar">
-        <h1 class="site-title">Allan Im</h1>
+        <h1 class="site-title" data-i18n="name"></h1>
 
         <%- include(navType);%>
 
@@ -21,20 +21,26 @@
 
         <!-- header-bottom -->
         <div class="header-bottom">
+            <!-- Language -->
+            <div class="btn-group-xs" data-toggle="buttons" id="change-language">
+                <button type="button" id ="lang-en" class="btn btn-xs btn-default" ><small>EN</small></button>
+                <button type="button" id ="lang-ja" class="btn btn-xs btn-default" ><small>JA</small></button>
+                <button type="button" id ="lang-ko" class="btn btn-xs btn-default" ><small>KO</small></button>
+            </div>
 
             <!-- SOCIAL -->
             <ul class="social">
                 <li>
-                    <a class="facebook" href="https://www.facebook.com/allan.syim"></a>
+                    <a class="facebook" href="http://fb.com/allan.syim"></a>
                 </li>
                 <li>
-                    <a class="twitter" href="https://twitter.com/allanlogs"></a>
+                    <a class="twitter" href="http://twitter.com/allanlogs"></a>
                 </li>
                 <li>
-                    <a class="linkedin" href="https://www.linkedin.com/in/allanim"></a>
+                    <a class="linkedin" href="http://linkedin.com/in/allanim"></a>
                 </li>
                 <li>
-                    <a class="instagram" href="https://www.instagram.com/allan.im/"></a>
+                    <a class="instagram" href="http://instagram.com/allan.im"></a>
                 </li>
             </ul>
             <!-- SOCIAL -->

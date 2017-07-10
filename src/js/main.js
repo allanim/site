@@ -246,26 +246,40 @@ var portfolioKeyword;
 		var $alert = $('.site-alert');
 		var $submit = contactForm.find('.submit');
 		
-		contactForm.submit(function()
+		contactForm.submit(function(evnet)
 		{
 			if (contactForm.valid())
 			{
-				NProgress.start();
-				$submit.addClass("active loading");
-				var formValues = contactForm.serialize();
-				
-				$.post(contactForm.attr('action'), formValues, function(data)
-				{
-					if ( data == 'success' ) {
-						contactForm.clearForm();
-					}
-					else {
-						$alert.addClass('error');
-					}
-					NProgress.done();
-					$alert.show();
-					setTimeout(function() { $alert.hide(); },6000)
-				});
+                NProgress.start();
+                $submit.addClass("active loading");
+
+                // $.post(contactForm.attr('action'), formValues, function(data)
+                // {
+                // 	if ( data == 'success' ) {
+                // 		contactForm.clearForm();
+                // 	}
+                // 	else {
+                // 		$alert.addClass('error');
+                // 	}
+                // 	NProgress.done();
+                // 	$alert.show();
+                // 	setTimeout(function() { $alert.hide(); },6000)
+                // });
+
+                event.preventDefault();
+                $submit.text("Sending...");
+                emailjs.sendForm("default_service","allan_contact","contact-form")
+                    .then(function(){
+                        contactForm.clearForm();
+                        $submit.text("Send");
+                    }, function(err) {
+                        $alert.addClass('error');
+                        console.error("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+                        $submit.text("Send");
+                    });
+                NProgress.done();
+                $alert.show();
+                setTimeout(function() { $alert.hide(); },6000)
 			}
 			return false
 		});
