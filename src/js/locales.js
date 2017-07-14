@@ -69,6 +69,9 @@
         // set cookie
         $.cookie('lang', updateLang);
 
+        // set html lang
+        $("html").attr("lang", updateLang);
+
         // set i18n lang
         i18next.changeLanguage(updateLang);
     }

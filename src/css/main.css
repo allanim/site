@@ -72,8 +72,22 @@ input,
 textarea,
 select {
  	font-family: 'Roboto', sans-serif;
-	}
-	
+}
+
+body:lang(ja),
+input:lang(ja),
+textarea:lang(ja),
+select:lang(ja) {
+	font-family: 'Noto Sans Japanese', sans-serif;
+}
+
+body:lang(ko),
+input:lang(ko),
+textarea:lang(ko),
+select:lang(ko) {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
 /* HEADINGS */
 h1,
 h2,
@@ -91,7 +105,43 @@ button,
 label,
 .tab-titles {
  	font-family: "Montserrat", serif;
-	}
+}
+
+h1:lang(ja),
+h2:lang(ja),
+h3:lang(ja),
+h4:lang(ja),
+h5:lang(ja),
+h6:lang(ja),
+.filters:lang(ja),
+.nav-menu:lang(ja),
+th:lang(ja),
+dt:lang(ja),
+.button:lang(ja),
+input[type=submit]:lang(ja),
+button:lang(ja),
+label:lang(ja),
+.tab-titles:lang(ja) {
+	font-family: "Rounded Mplus 1c", serif;
+}
+
+h1:lang(ko),
+h2:lang(ko),
+h3:lang(ko),
+h4:lang(ko),
+h5:lang(ko),
+h6:lang(ko),
+.filters:lang(ko),
+.nav-menu:lang(ko),
+th:lang(ko),
+dt:lang(ko),
+.button:lang(ko),
+input[type=submit]:lang(ko),
+button:lang(ko),
+label:lang(ko),
+.tab-titles:lang(ko) {
+	font-family: "Nanum Gothic", serif;
+}
 	
 /* FONTELLO ICONS */
 .social li a,
