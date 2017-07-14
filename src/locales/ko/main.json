@@ -1,9 +1,9 @@
 {
-  "name": "임성엽(앨런)",
+  "name": "임성엽",
   "nav": {
     "home": "처음으로",
-    "about": "나에 대해서",
-    "resume": "이력",
+    "about": "소개",
+    "resume": "레쥬메",
     "project": "프로젝트",
     "map": "맵",
     "contact": "연락처",
@@ -17,7 +17,7 @@
       "name":"이름",
       "email":"메일",
       "message":"메세지",
-      "send":"송신",
+      "send":"보내기",
       "sending":"송신중."    }
   }
 }

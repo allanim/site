@@ -2,8 +2,8 @@
   "name": "イムソンヨプ",
   "nav": {
     "home": "ホーム",
-    "about": "私について",
-    "resume": "履歴",
+    "about": "私",
+    "resume": "レジュメ",
     "project": "プロジェクト",
     "map": "マップ",
     "contact": "連絡先",
@@ -11,7 +11,7 @@
   },
   "contact": {
     "socialize": "ソーシャルネット",
-    "reach": "コンタクト情報",
+    "reach": "連絡情報",
     "sendmail": "メールを送る",
     "mail": {
       "name":"お名前",

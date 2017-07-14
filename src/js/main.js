@@ -267,15 +267,15 @@ var portfolioKeyword;
                 // });
 
                 event.preventDefault();
-                $submit.text("Sending...");
+                $submit.text(i18next.t('contact.mail.sending'));
                 emailjs.sendForm("default_service","allan_contact","contact-form")
                     .then(function(){
                         contactForm.clearForm();
-                        $submit.text("Send");
+                        $submit.text(i18next.t('contact.mail.send'));
                     }, function(err) {
                         $alert.addClass('error');
                         console.error("Send email failed!\r\n Response:\n " + JSON.stringify(err));
-                        $submit.text("Send");
+                        $submit.text(i18next.t('contact.mail.send'));
                     });
                 NProgress.done();
                 $alert.show();

@@ -44,11 +44,10 @@
         }, function () {
             initLangButton();
             updateLanguage(lang);
+        })
+        .on('languageChanged', function () {
+            updateContent();
         });
-
-    i18next.on('languageChanged', () => {
-        updateContent();
-    });
 
     function initLangButton() {
         supportedLanguages.forEach(function (val) {
@@ -67,7 +66,7 @@
         $('#lang-' + updateLang).addClass('btn-primary').removeClass('btn-default');
 
         // set cookie
-        $.cookie('lang', updateLang);
+        $.cookie('lang', updateLang, {expires: 365});
 
         // set html lang
         $("html").attr("lang", updateLang);
@@ -80,25 +79,5 @@
         jqueryI18next.init(i18next, $);
         $("[data-i18n]").localize();
     }
-
-    // var contactForm = $("form#contact-form");
-    // contactForm.submit(function(event){
-    //     event.preventDefault();
-    //
-    //     // Change to your service ID, or keep using the default service
-    //     var service_id = "default_service";
-    //     var template_id = "allan_contact";
-    //
-    //     contactForm.find("button").text("Sending...");
-    //     emailjs.sendForm(service_id,template_id,"contactForm")
-    //         .then(function(){
-    //             alert("Sent!");
-    //             myform.find("button").text("Send");
-    //         }, function(err) {
-    //             alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
-    //             myform.find("button").text("Send");
-    //         });
-    //     return false;
-    // });
 
 })(jQuery);

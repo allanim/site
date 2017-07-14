@@ -70,21 +70,24 @@ img {
 body,
 input,
 textarea,
-select {
+select,
+.copy-text {
  	font-family: 'Roboto', sans-serif;
 }
 
 body:lang(ja),
 input:lang(ja),
 textarea:lang(ja),
-select:lang(ja) {
+select:lang(ja),
+.copy-text:lang(ja) {
 	font-family: 'Noto Sans Japanese', sans-serif;
 }
 
 body:lang(ko),
 input:lang(ko),
 textarea:lang(ko),
-select:lang(ko) {
+select:lang(ko),
+.copy-text:lang(ko) {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -2521,3 +2524,7 @@ a.more-link:hover,
 #nprogress .spinner-icon {
   	border-top-color: #FFFC00; border-left-color: #FFFC00;
 	}
+
+#change-language .btn {
+	outline: 0;
+}
