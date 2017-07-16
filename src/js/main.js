@@ -225,7 +225,7 @@ var portfolioKeyword;
 		
 					//CREATE A CUSTOM PIN ICON
 					var marker_image = marker_image;
-					var pinIcon = new google.maps.MarkerImage(marker_image,null,null, null,new google.maps.Size(120, 90));    
+					var pinIcon = new google.maps.MarkerImage(marker_image,null,null, null,new google.maps.Size(80, 80));
 				
 					var marker = new google.maps.Marker({
 					   position: new google.maps.LatLng(latitude,longitude),

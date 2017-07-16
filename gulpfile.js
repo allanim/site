@@ -34,6 +34,7 @@ marked.setOptions({
 const config = {
     source: 'src',
     contents: 'src/contents',
+    lang: ['en', 'ja', 'ko'],
     publish: 'dist',
     temporary: '.tmp',
     bowerComponents: 'bower_components',
@@ -65,7 +66,7 @@ const cssOptimizeTask = function (cssPath, sources) {
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(path.join(config.publish, cssPath)))
-        .pipe(size({title: 'css path : ' + path.join(config.publish, cssPath)}));
+        .pipe(size({title: 'css path : ' + path.join(cssPath)}));
 };
 
 // Task fo image optimize
@@ -78,18 +79,20 @@ const imageOptimizeTask = function (imagePath, sources) {
             interlaced: true
         }))
         .pipe(gulp.dest(path.join(config.publish, imagePath)))
-        .pipe(size({title: 'image optimized path : ' + path.join(config.publish, imagePath)}));
+        .pipe(size({title: 'image optimized path : ' + path.join(imagePath)}));
 };
 
 const markdownConvertTask = function (markdownPath, sources) {
-    return gulp.src(sources.map(function (source) {
-        return path.join(config.contents, source);
-    })).pipe(plumber())
-        .pipe(gutil.buffer())
-        .pipe(mdToJson(marked, 'resume.json'))
-        .pipe(gulp.dest(path.join(config.temporary, markdownPath)))
-        .pipe(gulp.dest(path.join(config.publish, markdownPath)))
-        .pipe(size({title: 'markdown converted path : ' + path.join(config.publish, markdownPath)}));
+    config.lang.forEach(function (lang) {
+        gulp.src(sources.map(function (source) {
+            return path.join(config.contents, lang, markdownPath, source);
+        })).pipe(plumber())
+            .pipe(gutil.buffer())
+            .pipe(mdToJson(marked, markdownPath + '.json'))
+            .pipe(gulp.dest(path.join(config.temporary, 'locales', lang)))
+            .pipe(gulp.dest(path.join(config.publish, 'locales', lang)))
+            .pipe(size({title: 'markdown converted : ' + path.join('locales', lang, markdownPath)}));
+    });
 };
 
 const htmlOptimizeTask = function (htmlPath, sources) {
@@ -98,7 +101,7 @@ const htmlOptimizeTask = function (htmlPath, sources) {
     })).pipe(plumber())
         .pipe(htmlminify())
         .pipe(gulp.dest(path.join(config.publish, htmlPath)))
-        .pipe(size({title: 'html optimized path : ' + path.join(config.publish, htmlPath)}));
+        .pipe(size({title: 'html optimized path : ' + path.join(htmlPath)}));
 };
 
 const jsTask = function (jsPath, sources) {
@@ -108,7 +111,7 @@ const jsTask = function (jsPath, sources) {
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(path.join(config.publish, jsPath)))
-        .pipe(size({title: 'js path : ' + path.join(config.publish, jsPath)}));
+        .pipe(size({title: 'js path : ' + path.join(jsPath)}));
 };
 
 gulp.task('build-css', function () {
@@ -138,7 +141,8 @@ gulp.task('build-js', function () {
 });
 
 gulp.task('build-markdown', function () {
-    return markdownConvertTask('contents', ['**/*.md']);
+    markdownConvertTask('about', ['**/*.md']);
+    markdownConvertTask('resume', ['**/*.md']);
 });
 
 gulp.task("build-ejs", function () {
@@ -264,9 +268,9 @@ gulp.task('serve', ['build-markdown', 'build-ejs'], function () {
     });
 
     gulp.watch([config.source + '/**/*.ejs'], ['build-ejs', reload]);
+    gulp.watch([config.source + '/contents/**/*'], ['build-markdown', reload]);
     gulp.watch([config.source + '/css/**/*.css'], reload);
     gulp.watch([config.source + '/js/**/*.js'], reload);
-    gulp.watch([config.source + '/contents/**/*'], reload);
 });
 
 // Build and serve the output from the dist build

@@ -39,7 +39,7 @@
             lng: lang,
             defaultLng: 'en',
             fallbackLng: 'en',
-            ns: ['main'],
+            ns: ['main', 'about', 'resume'],
             defaultNS: 'main'
         }, function () {
             initLangButton();
