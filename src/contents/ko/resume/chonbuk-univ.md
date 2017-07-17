@@ -4,5 +4,3 @@
 #### BACHELOR OF SCIENCE
 
 ##### 전북대학교 (전주, 대한민국)
-
-ssss memo3

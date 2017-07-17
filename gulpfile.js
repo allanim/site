@@ -164,15 +164,9 @@ gulp.task("build-ejs", function () {
 });
 
 gulp.task('build-asserts', function () {
-    // // css library
-    // gulp.src(config.source + '/css/bootstrap.min.css')
-    //     .pipe(gulp.dest(config.publish + '/css'));
-    //
-    // // js library
-    // gulp.src([config.source + '/js/**/*.{js,css,svg}',
-    //     '!' + config.source + '/main.js',
-    //     '!' + config.source + '/locales.js'])
-    //     .pipe(gulp.dest(config.publish + '/js'));
+    // css library
+    gulp.src(config.source + '/css/bootstrap.min.css')
+        .pipe(gulp.dest(config.publish + '/css'));
 
     // copy assert
     gulp.src([config.source + '/libs/**/*',
@@ -181,8 +175,6 @@ gulp.task('build-asserts', function () {
         config.bowerComponents + '/i18next/i18next.min.*',
         config.bowerComponents + '/i18next-xhr-backend/i18nextXHRBackend.min.*',
         config.bowerComponents + '/jquery-i18next/jquery-i18next.min.*',
-        config.bowerComponents + '/bootstrap/dist/js/bootstrap.min.*',
-        config.bowerComponents + '/bootstrap/dist/{css,fonts}/**/{bootstrap.min.*,*icons*}',
         config.bowerComponents + '/respond/dest/respond.min.*',
         config.bowerComponents + '/magnific-popup/dist/*.magnific-popup.min.*',
         config.bowerComponents + '/jquery.uniform/dist/*.uniform.min.*',

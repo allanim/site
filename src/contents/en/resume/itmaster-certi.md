@@ -5,4 +5,3 @@
 
 ##### Korea International Trade Association - IT Academy (Seoul, Korea)
 
-ssss memo3

@@ -61,9 +61,9 @@
     function updateLanguage(updateLang) {
         // set language class
         supportedLanguages.forEach(function (val) {
-            $('#lang-' + val).removeClass('btn-primary').addClass('btn-default')
+            $('#lang-' + val).removeClass('lang-button-select');
         });
-        $('#lang-' + updateLang).addClass('btn-primary').removeClass('btn-default');
+        $('#lang-' + updateLang).addClass('lang-button-select');
 
         // set cookie
         $.cookie('lang', updateLang, {expires: 365});

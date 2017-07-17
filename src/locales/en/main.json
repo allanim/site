@@ -14,17 +14,32 @@
     "reach": "Reach Me",
     "sendmail": "Drop Me A Line",
     "mail": {
-      "name":"Name",
-      "email":"Email",
-      "message":"Message",
-      "send":"Send",
-      "sending":"Sending..."
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending..."
     }
   },
   "resume": {
-    "now": "present",
-    "work": "work history",
-    "education" : "education"
+    "now": "STUDYING",
+    "work": "WORK HISTORY",
+    "education": "EDUCATION",
+    "lang": {
+      "title": "Languages",
+      "en": "English",
+      "ja": "Japanese",
+      "ko": "Korean"
+    },
+    "level": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "expert": "Expert",
+      "native": "Native"
+    },
+    "expert-skills": "Working knowledge",
+    "basic-skills": "Basic knowledge"
   }
 }
 

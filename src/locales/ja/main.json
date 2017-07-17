@@ -14,16 +14,31 @@
     "reach": "連絡情報",
     "sendmail": "メールを送る",
     "mail": {
-      "name":"お名前",
-      "email":"メール",
-      "message":"メッセージ",
-      "send":"送信",
-      "sending":"送信中."
+      "name": "お名前",
+      "email": "メール",
+      "message": "メッセージ",
+      "send": "送信",
+      "sending": "送信中."
     }
   },
   "resume": {
-    "now": "現在の状態",
+    "now": "STUDYING",
     "work": "職歴",
-    "education" : "学歴"
+    "education": "学歴",
+    "lang": {
+      "title": "言語",
+      "en": "英語",
+      "ja": "日本語",
+      "ko": "韓国語"
+    },
+    "level": {
+      "beginner": "初級",
+      "intermediate": "中級",
+      "advanced": "高級",
+      "expert": "専門家",
+      "native": "母国語"
+    },
+    "expert-skills": "Working knowledge",
+    "basic-skills": "Basic knowledge"
   }
 }

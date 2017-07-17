@@ -123,7 +123,7 @@ var portfolioKeyword;
 		// ------------------------------
 		// PORTFOLIO DETAILS
 		// Show details
-		$(".one-page-layout a.ajax").live('click',function() {
+		$(".one-page-layout a.ajax").on('click',function() {
 			
 			var url = $(this).attr('href');
 			var baseUrl = $.address.baseURL();
@@ -609,7 +609,8 @@ var portfolioKeyword;
 		$('.bar').each(function() {
 			 var bar = $(this);
 			 var percent = bar.attr('data-percent');
-			 bar.find('.progress').css('width', percent + '%' ).html('<span>'+percent+'</span>');
+			 bar.find('.progress').css('width', percent + '%' );
+				 // .html('<span>'+percent+'</span>');
 			});
 	}	
 	// ------------------------------	

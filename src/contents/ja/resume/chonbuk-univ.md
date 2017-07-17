@@ -4,5 +4,3 @@
 #### Bachelor of Science
 
 ##### Chonbuk national university (全州, 韓国)
-
-ssss memo3

@@ -14,15 +14,31 @@
     "reach": "연락정보",
     "sendmail": "메일 보내기",
     "mail": {
-      "name":"이름",
-      "email":"메일",
-      "message":"메세지",
-      "send":"보내기",
-      "sending":"송신중."    }
+      "name": "이름",
+      "email": "메일",
+      "message": "메세지",
+      "send": "보내기",
+      "sending": "송신중."
+    }
   },
   "resume": {
-    "now": "현재 하는 일",
+    "now": "STUDYING",
     "work": "경력",
-    "education" : "학력"
+    "education": "학력",
+    "lang": {
+      "title": "언어",
+      "en": "영어",
+      "ja": "일본어",
+      "ko": "한국어"
+    },
+    "level": {
+      "beginner": "초급",
+      "intermediate": "중급",
+      "advanced": "고급",
+      "export": "전문가",
+      "native": "모국어"
+    },
+    "expert-skills": "Working knowledge",
+    "basic-skills": "Basic knowledge"
   }
 }
