@@ -215,14 +215,13 @@ gulp.task('build-asserts', function () {
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(config.publish + '/libs/css'))
-        .pipe(size({title: 'copy js asserts'}));
+        .pipe(size({title: 'copy css asserts'}));
 
-    // gulp.src([config.bowerComponents + '/jquery.cookie/*.js'])
-    //     .pipe(gulp.dest(config.temporary + '/libs'))
-    //     .pipe(plumber())
-    //     .pipe(uglify())
-    //     .pipe(gulp.dest(config.publish + '/libs'))
-    //     .pipe(size({title: 'copy asserts'}));
+    // locales
+    gulp.src(config.source + '/locales/**/*')
+        .pipe(gulp.dest(config.publish + '/locales'))
+        .pipe(size({title: 'copy locales'}));
+
 });
 
 // Clean output directory

@@ -20,6 +20,11 @@
       "send":"Send",
       "sending":"Sending..."
     }
+  },
+  "resume": {
+    "now": "present",
+    "work": "work history",
+    "education" : "education"
   }
 }
 

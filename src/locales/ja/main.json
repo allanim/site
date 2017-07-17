@@ -20,5 +20,10 @@
       "send":"送信",
       "sending":"送信中."
     }
+  },
+  "resume": {
+    "now": "現在の状態",
+    "work": "職歴",
+    "education" : "学歴"
   }
 }

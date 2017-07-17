@@ -4,7 +4,7 @@ title: Hello!
 
 #### Im, SeongYeob / Allan Im
 
-##### Senior Software Engineer / UZEN Japan
+##### Software Engineer
 
 Hi, I'm Allan.
 

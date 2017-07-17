@@ -4,7 +4,7 @@ title: こんにちは～
 
 #### 任 成燁(イム ソンヨプ) / Allan Im
 
-##### Senior Software Engineer / UZEN Japan
+##### ソフトウェアエンジニア
 
 こんにちは、イムソンヨプと申します。
 

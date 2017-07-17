@@ -1,12 +1,8 @@
----
-layout: resume
----
 
+### 1997年3月　〜　2004年8月
 
-### Mar 1997 – Aug 2004
+#### Bachelor of Science
 
-#### Chonbuk national university - Jeonju, Korea
-
-##### BACHELOR OF SCIENCE
+##### Chonbuk national university (全州, 韓国)
 
 ssss memo3

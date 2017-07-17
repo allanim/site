@@ -4,7 +4,7 @@ title: 안녕하세요!
 
 #### 임 성엽 / Allan Im
 
-##### Senior Software Engineer / UZEN Japan
+##### 소프트웨어 엔지니어
 
 안녕하세요. 임성엽 입니다.
 

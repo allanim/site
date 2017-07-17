@@ -19,5 +19,10 @@
       "message":"메세지",
       "send":"보내기",
       "sending":"송신중."    }
+  },
+  "resume": {
+    "now": "현재 하는 일",
+    "work": "경력",
+    "education" : "학력"
   }
 }
