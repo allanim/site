@@ -553,7 +553,7 @@ html {
 	background: #1c262b;
 }
 .site-title {
-	display: none; position: absolute; top: 0; left: 70px; width: 252px; line-height: 50px; margin: 0; padding: 0; font-weight: bold; font-size: 12px; letter-spacing: 0; color: #FFF;
+	display: none; position: absolute; top: 0; left: 70px; line-height: 50px; margin: 0; padding: 0; font-weight: bold; font-size: 12px; letter-spacing: 0; color: #FFF;
 }
 .mobile-title {
 	display: block;
@@ -2526,10 +2526,23 @@ a.more-link:hover,
 	border-top-color: #FFFC00; border-left-color: #FFFC00;
 }
 
-#change-language .btn {
+/* LANGUAGE */
+.language {
+	margin: 1em 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	display: none;
+}
+.language li {
+	display: inline-block;
+	padding: 0;
+	margin-bottom: -3px;
+}
+.language .btn {
     outline: 0;
 }
-#change-language .lang-button {
+.language .lang-button {
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -2542,18 +2555,31 @@ a.more-link:hover,
     padding-left: 1px;
     padding-top: 2px;
     cursor: pointer;
+	text-align: center;
 }
-#change-language .lang-button:hover {
+.language .lang-button:hover {
     background: #337ab7;
 }
-#change-language .lang-button-select {
+.language .lang-button-select {
     background: #337ab7;
     color: #FFF;
+	font-weight: bold;
 }
-#change-language .lang-button-select:hover {
+.language .lang-button-select:hover {
     background: #337ab7;
 }
+.mobile-language {
+	margin: 0.5em 1em;
+	text-align: right;
+	display: block;
+}
 
+.social {
+	font-family: "Roboto";
+}
+
+
+/* SKILL UNIT */
 .skill-unit .bar .progress {
 	position: absolute;
 	top: 0;
@@ -2565,30 +2591,28 @@ a.more-link:hover,
 	background-color: #337ab7;
 	text-align: right;
 }
-
 .skill-unit .bar {
 	border-radius: 16px;
 	background-color: #fff;
 }
-
 .skill-unit .bar .progress span {
 	position: relative;
 	top: -11px;
 	display: inline-block;
-	padding: 0 10px;
+	padding: 1px 10px;
 	font-size: 11px;
 	font-weight: bold;
 	border-radius: 15px;
 	color: #fff;
 	background-color: inherit;
 }
-
 .skill-unit .tag {
-	padding: 0 10px;
+	padding: 3px 10px;
 	margin: 0 3px;
 	font-family: 'Roboto', sans-serif;
-	font-size: medium;
+	font-size: 13px;
 	border-radius: 15px;
 	color: #fff;
 	background-color: #337ab7;
 }
+

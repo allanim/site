@@ -36,6 +36,12 @@
 	.mobile-title {
 		display: none;
 		}
+	.language {
+		display: block;
+	}
+	.mobile-language {
+		display: none;
+	}
 	
 	/* HEADER SOCIAL */
 	.header-wrap { 

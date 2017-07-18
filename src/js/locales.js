@@ -51,19 +51,18 @@
 
     function initLangButton() {
         supportedLanguages.forEach(function (val) {
-            $('#lang-' + val).click(function () {
+            $('.lang-' + val).click(function () {
                 updateLanguage(val);
             });
         });
-
     }
 
     function updateLanguage(updateLang) {
         // set language class
         supportedLanguages.forEach(function (val) {
-            $('#lang-' + val).removeClass('lang-button-select');
+            $('.lang-' + val).removeClass('lang-button-select');
         });
-        $('#lang-' + updateLang).addClass('lang-button-select');
+        $('.lang-' + updateLang).addClass('lang-button-select');
 
         // set cookie
         $.cookie('lang', updateLang, {expires: 365});
