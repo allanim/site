@@ -2,16 +2,14 @@
 title: Hello!
 ---
 
-#### Im, SeongYeob / Allan Im
+#### Allan(SeongYeob) Im
 
 ##### Software Engineer
 
 Hi, I'm Allan.
 
-Toronto via Tokyo, Seoul, and Jeonju. Alumnus of Chonbuk national University.
+[Toronto](https://en.wikipedia.org/wiki/Toronto) via [Tokyo](https://en.wikipedia.org/wiki/Tokyo), [Seoul](https://en.wikipedia.org/wiki/Seoul), and [Jeonju](https://en.wikipedia.org/wiki/Jeonju). Alumnus of [Chonbuk national university](https://en.wikipedia.org/wiki/Chonbuk_National_University) in korea.
 
-Intrigued by design, traveling, photography, classical music, strategy, writing, art, armchair philosophy, fabulous food, and even better conversations.
+Intrigued by programing, design, strategy, traveling, photography, calm music, fantasy movie, video game, puzzle, art, fabulous food, and even better conversations.
 
-Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.
-
-Say hello on Twitter @allanlogs 
+Seeking to be inspired, to positive thinking, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.

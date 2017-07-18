@@ -6,12 +6,10 @@ title: こんにちは～
 
 ##### ソフトウェアエンジニア
 
-こんにちは、イムソンヨプと申します。
+こんにちは、アラン（イムソンヨプ）と申します。
 
-Toronto via Tokyo, Seoul, and Jeonju. Alumnus of Jeonbuk national University.
+韓国の[全州](https://ja.wikipedia.org/wiki/%E5%85%A8%E5%B7%9E%E5%B8%82)、[ソウル](https://ja.wikipedia.org/wiki/%E3%82%BD%E3%82%A6%E3%83%AB%E7%89%B9%E5%88%A5%E5%B8%82)、日本の[東京](https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E9%83%BD)を経つカナダの[トロント](https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%AD%E3%83%B3%E3%83%88)で留まっています。韓国の[全北大学](https://ja.wikipedia.org/wiki/%E5%85%A8%E5%8C%97%E5%A4%A7%E5%AD%A6%E6%A0%A1)で工学士を習得しました。
 
-Intrigued by design, traveling, photography, classical music, strategy, writing, art, armchair philosophy, fabulous food, and even better conversations.
+プログラミング、設計、戦略、旅行、写真、静かな音楽、ファンタジー映画、ビデオケーム、パズル、アート、良い食べ物、そして、もっと良い会話に興味を持っています。
 
-Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.
-
-Say hello on Twitter @allanlogs 
+頭に閃く考え、前向きな思考、価値があるものをため一生懸命働く、そして、最高を引き出す人たちと一緒にすることを求めています。
