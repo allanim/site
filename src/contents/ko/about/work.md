@@ -2,9 +2,8 @@
 title: 하는 일!
 ---
 
+저의 전문 분야는 E-commerce, 결재 시스템, 자바 프레임워크, 빌드와 개발운영, 애자일 개발 그리고 CI입니다.
 
-My professional interests include business strategy and operations, the quantified self, tech, design thinking, startups, and sustainable development.
+지금은 토론토에서 영어와 모바일 어플리케이션에 관한 공부를 하고 있습니다.이전에는 일본 UZEN의 제품 개발팀 개발자로, 소프트웨어 개발 방법론을 연구하고, 일본내의 E-commerce를 설계 개발 하였으며, E-commerce의 글로벌 전개를 위한 결제, 배송, 언어, 국가, 통화 등에 대한 연구개발을 하였습니다.
 
-I currently lead Operations at Driver, a startup based in San Francisco connecting cancer patients to treatment options. Previously, I was a consultant at McKinsey & Company and have been lucky to be a part of a few fantastic teams spanning operations and content for startups in New York and San Francisco, social innovation and strategy consulting in London, and sustainability research as a Global Fellow for Sustainable Development in the Dominican Republic.
-
-Recently, my work has appeared on Inc. Magazine, Mashable, Lifehacker, Business Insider, Women 2.0, and The Daily Muse.
+최근, 제가 개발한 일은 G1Commerce와 PARCO입니다.
