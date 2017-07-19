@@ -1,4 +1,0 @@
-source: 'src'
-contents: 'contents'
-publish: 'dist'
-temporary: '.tmp'

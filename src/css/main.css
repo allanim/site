@@ -2580,6 +2580,22 @@ a.more-link:hover,
 
 
 /* SKILL UNIT */
+.skill-unit span {
+	padding: 3px 10px;
+	margin: 0 3px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	border-radius: 15px;
+	color: #fff;
+	/*background-color: #337ab7;*/
+	line-height: 30px;
+}
+.expert span {
+	background-color: #da6d41;
+}
+.intermediate span {
+	background-color: #65a7c0;
+}
 .skill-unit .bar .progress {
 	position: absolute;
 	top: 0;
@@ -2588,7 +2604,7 @@ a.more-link:hover,
 	height: 100%;
 	border-radius: 16px;
 	transition: width 1s ease-out;
-	background-color: #337ab7;
+	background-color: #6480e2;
 	text-align: right;
 }
 .skill-unit .bar {
@@ -2597,23 +2613,16 @@ a.more-link:hover,
 }
 .skill-unit .bar .progress span {
 	position: relative;
-	top: -11px;
+	top: -12px;
 	display: inline-block;
-	padding: 1px 10px;
+	padding: 0 10px;
+	margin: 0;
 	font-size: 11px;
 	font-weight: bold;
 	border-radius: 15px;
 	color: #fff;
 	background-color: inherit;
+	line-height: 20px;
 }
-.skill-unit .tag {
-	padding: 3px 10px;
-	margin: 0 3px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 13px;
-	border-radius: 15px;
-	color: #fff;
-	background-color: #337ab7;
-    line-height: 30px;
-}
+
 

@@ -15,7 +15,7 @@ const size = require('gulp-size');
 const concat = require('gulp-concat');
 const clean = require('gulp-clean');
 const imagemin = require('gulp-imagemin');
-const htmlminify = require("gulp-html-minify");
+const htmlminify = require('gulp-html-minify');
 const processhtml = require('gulp-processhtml');
 const uglify = require('gulp-uglify');
 const ejs = require('gulp-ejs');
@@ -32,16 +32,12 @@ marked.setOptions({
 
 // build config
 const config = {
+    lang: ['en', 'ja', 'ko'],
     source: 'src',
     contents: 'src/contents',
-    lang: ['en', 'ja', 'ko'],
     publish: 'dist',
     temporary: '.tmp',
-    bowerComponents: 'bower_components',
-    css: {
-        files: ['./src/css/style*.css']
-    },
-    asserts: ['./src/fonts*/**/*.{eot,svg,ttf,woff,woff2}', './src/images*/**']
+    bowerComponents: 'bower_components'
 };
 
 const AUTOPREFIXER_BROWSERS = [
@@ -90,7 +86,6 @@ const markdownConvertTask = function (markdownPath, sources) {
             .pipe(gutil.buffer())
             .pipe(mdToJson(marked, markdownPath + '.json'))
             .pipe(gulp.dest(path.join(config.temporary, 'locales', lang)))
-            .pipe(gulp.dest(path.join(config.publish, 'locales', lang)))
             .pipe(size({title: 'markdown converted : ' + path.join('locales', lang, markdownPath)}));
     });
 };
@@ -115,11 +110,11 @@ const jsTask = function (jsPath, sources) {
 };
 
 gulp.task('build-css', function () {
-    return cssOptimizeTask("css", ['768.css', 'align.css', 'animations.css', 'main.css']);
+    return cssOptimizeTask('css', ['768.css', 'align.css', 'animations.css', 'main.css']);
 });
 
 gulp.task('build-font-css', function () {
-    return cssOptimizeTask("fonts", ['**/*.css']);
+    return cssOptimizeTask('fonts', ['**/*.css']);
 });
 
 gulp.task('build-fonts', ['build-font-css'], function () {
@@ -140,27 +135,37 @@ gulp.task('build-js', function () {
     return jsTask('js', ['main.js', 'locales.js']);
 });
 
-gulp.task('build-markdown', function () {
+gulp.task('mdToJson', function () {
     markdownConvertTask('about', ['**/*.md']);
     markdownConvertTask('resume', ['**/*.md']);
 });
 
-gulp.task("build-ejs", function () {
-    // var pages = ['index', '404'];
+gulp.task('build-markdown', function () {
+    return gulp.src(config.temporary + '/locales/**/*')
+        .pipe(gulp.dest(config.publish + '/locales'));
+
+});
+
+gulp.task('ejsToHtml', function () {
     const pages = [
         {source: 'allan', target: 'index', layout: 'one-page'},
         {source: '404', target: '404', layout: 'single-page'}
     ];
     for (let i = 0, length = pages.length; i < length; i++) {
-        gulp.src([config.source + "/_layout-" + pages[i].layout + ".ejs"])
+        gulp.src([config.source + '/_layout-' + pages[i].layout + '.ejs'])
             .pipe(plumber())
             .pipe(ejs({content: pages[i].source}))
-            .pipe(rename(pages[i].target + ".html"))
-            .pipe(gulp.dest(config.temporary))
-            .pipe(processhtml())
-            // .pipe(htmlminify())
-            .pipe(gulp.dest(config.publish));
+            .pipe(rename(pages[i].target + '.html'))
+            .pipe(gulp.dest(config.temporary));
     }
+});
+
+gulp.task('build-ejs', function () {
+    return gulp.src(config.temporary + '/*.html')
+        .pipe(plumber())
+        .pipe(processhtml())
+        // .pipe(htmlminify())
+        .pipe(gulp.dest(config.publish));
 });
 
 gulp.task('build-asserts', function () {
@@ -225,14 +230,16 @@ gulp.task('clean', function () {
 // Build production files, the default task
 gulp.task('build', function (cb) {
     runSequence('clean', 'build-asserts',
-        ['build-css', 'build-fonts', 'build-images', 'build-js', 'build-markdown', 'build-ejs'],
+        ['mdToJson', 'ejsToHtml'],
+        ['build-css', 'build-fonts', 'build-images', 'build-js'],
+        ['build-markdown', 'build-ejs'],
         cb);
 });
 
 gulp.task('default', ['build']);
 
 // Watch files for changes & reload
-gulp.task('serve', ['build-markdown', 'build-ejs'], function () {
+gulp.task('serve', ['mdToJson', 'ejsToHtml'], function () {
     browserSync({
         port: 5000,
         notify: false,
@@ -265,7 +272,7 @@ gulp.task('serve', ['build-markdown', 'build-ejs'], function () {
 });
 
 // Build and serve the output from the dist build
-gulp.task('serve-dist', ['default'], function () {
+gulp.task('serve-dist', ['build'], function () {
     browserSync({
         port: 5001,
         notify: false,
