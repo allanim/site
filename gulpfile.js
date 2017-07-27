@@ -20,6 +20,7 @@ const processhtml = require('gulp-processhtml');
 const uglify = require('gulp-uglify');
 const ejs = require('gulp-ejs');
 const gutil = require('gulp-util');
+const ghPages = require('gulp-gh-pages');
 
 
 // markdown to json
@@ -169,6 +170,10 @@ gulp.task('build-ejs', function () {
 });
 
 gulp.task('build-asserts', function () {
+    // cname
+    gulp.src(config.source + '/CNAME')
+        .pipe(gulp.dest(config.publish));
+
     // css library
     gulp.src(config.source + '/css/bootstrap.min.css')
         .pipe(gulp.dest(config.publish + '/css'));
@@ -292,4 +297,12 @@ gulp.task('serve-dist', ['build'], function () {
         server: [config.publish],
         middleware: [historyApiFallback()]
     });
+});
+
+gulp.task('deploy', function() {
+    return gulp.src('./dist/**/*')
+        .pipe(ghPages({
+            remoteUrl: 'https://github.com/allanim/allanim.github.io.git',
+            branch: 'master'
+        }));
 });
