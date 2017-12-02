@@ -6,4 +6,4 @@ title: 仕事
 
 現在はトロントで英語とモバイルアプリケーションを勉強しています。以前は日本の株式会社UZENの製品開発チームで開発者として、ソフトウェア開発方法を研究し、日本国内のE-commerceを設計及び開発、グローバル展開の為に、決済、配送、言語、国、通貨などを研究開発しました。
 
-最近、開発したものはG1CommerceとPARCOです。
+最近、開発したものは[G1Commerce](http://g1commerce.jp/)と[PARCO](http://www.anrealage.com/)([press](https://prtimes.jp/main/html/rd/p/000000018.000011185.html))です。

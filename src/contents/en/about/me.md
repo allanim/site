@@ -2,11 +2,11 @@
 title: Hello!
 ---
 
-#### Allan(SeongYeob) Im
+#### Allan(Seongyeob) Im
 
 ##### Software Engineer
 
-Hi, I'm Allan.
+Hi, I'm Seongyeob, the English name is Allan.
 
 [Toronto](https://en.wikipedia.org/wiki/Toronto) via [Tokyo](https://en.wikipedia.org/wiki/Tokyo), [Seoul](https://en.wikipedia.org/wiki/Seoul), and [Jeonju](https://en.wikipedia.org/wiki/Jeonju). Alumnus of [Chonbuk National University](https://en.wikipedia.org/wiki/Chonbuk_National_University) in korea.
 
