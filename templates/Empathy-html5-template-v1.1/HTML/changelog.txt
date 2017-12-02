@@ -3,6 +3,41 @@ CHANGE LOG
 ---
 
 
+v.1.1.3 - 22 Agu 2017
+
+- fixed : mask is not visible on home with video page bug
+
+Changed Files:
+	- css/main.css
+
+---
+
+
+v.1.1.2 - 8 Agu 2017
+
+- fixed : firefox homepage scrolling endlessly bug
+- fixed : menu icons overflow social icons on header 
+
+Changed Files:
+	- css/main.css
+	- css/768.css
+
+---
+
+
+v.1.1.1 - 15 May 2017
+
+- fixed : scrollable page with image background style 
+- fixed : portfolio with image background z-index issue 
+- added : bg images to pages with bg video (videos don't autoplay on mobile so image is shows as fallback) 
+
+Changed Files:
+	- css/main.css
+	- css/768.css
+	- js/main.js
+	- html data attr = data-mobile-classic-layout="false"
+
+---
 
 v.1.1 - 17 Mar 2017
 

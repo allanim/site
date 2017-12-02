@@ -38,8 +38,8 @@
       "expert": "Expert",
       "native": "Native"
     },
-    "expert-skills": "Working knowledge",
-    "basic-skills": "Basic knowledge"
+    "t-skills": "Technical Skills",
+    "k-skills": "Knowledgeable Skills"
   }
 }
 

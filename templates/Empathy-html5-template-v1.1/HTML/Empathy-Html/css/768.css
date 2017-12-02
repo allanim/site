@@ -62,11 +62,18 @@
 		}
 	.modern-layout *::-webkit-scrollbar-thumb,
 	.single-page-layout *::-webkit-scrollbar-thumb {
-		border-radius: 4px;	background-color: rgba(28, 38, 43, 0.25);
+		border-radius: 4px;	background-color: rgba(28, 38, 43, 0.2);
 		}
 	.modern-layout *::-webkit-scrollbar:horizontal,
 	.single-page-layout *::-webkit-scrollbar:horizontal {
 		height: 8px; 
+		}
+	/* show darker scrollbar path for pages with bg image */
+	.modern-layout .page-layout.has-bg-img::-webkit-scrollbar {
+		background: rgba(73, 92, 95, 0.75) !important;
+		}
+	.modern-layout .page-layout.has-bg-img::-webkit-scrollbar-thumb {
+		background-color: rgba(255, 255, 255, 0.25);
 		}
 	
 	/* PAGES */	
@@ -251,7 +258,7 @@
 		
 	/* Social Feed */
 	.social-feed ul li,
-	.null-instagram-feed ul li, {
+	.null-instagram-feed ul li {
 		width: 50%; 
 		}
 	.social-feed ul li img,

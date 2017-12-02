@@ -977,7 +977,7 @@ form.bs-docs-example {
     max-width: 270px;
   }
 
-  /* Do our best to make tables works in narrow viewports */
+  /* Do our best to make tables work in narrow viewports */
   table code {
     white-space: normal;
     word-wrap: break-word;
