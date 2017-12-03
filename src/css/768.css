@@ -367,9 +367,9 @@
 		}	
 	
 	/* CLIENT */
-	.client img { 
-		max-height: 66px;
-		}
+	/*.client img { */
+		/*max-height: 66px;*/
+		/*}*/
 		
 }
 

@@ -926,6 +926,18 @@ body {
 .client img {
 	margin: 0 auto; width: auto; max-height: 46px; display:block;
 }
+.client-bg1 {
+	padding: 1.4em 1.8em; border-radius: 8px; background: white; height: 100px; width: 100%;
+	display: table-cell; vertical-align: middle;
+}
+.client-table {
+	display: table;
+	margin-top: 10px;
+}
+.client-bg2 {
+	padding: 0.4em 0.8em; border-radius: 8px; background: white; height: 60px; width: 100%;
+	display: table-cell; vertical-align: middle;
+}
 
 /* TIMELINE */
 .event {
