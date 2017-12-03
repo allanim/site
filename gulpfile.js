@@ -270,8 +270,8 @@ gulp.task('serve', ['mdToJson', 'ejsToHtml'], function () {
         }
     });
 
-    gulp.watch([config.source + '/**/*.ejs'], ['build-ejs', reload]);
-    gulp.watch([config.source + '/contents/**/*'], ['build-markdown', reload]);
+    gulp.watch([config.source + '/**/*.ejs'], ['ejsToHtml', reload]);
+    gulp.watch([config.source + '/contents/**/*'], ['mdToJson', reload]);
     gulp.watch([config.source + '/css/**/*.css'], reload);
     gulp.watch([config.source + '/js/**/*.js'], reload);
 });
