@@ -9,20 +9,11 @@
     "contact": "連絡先",
     "search": "検索"
   },
-  "contact": {
-    "socialize": "ソーシャルネット",
-    "reach": "連絡情報",
-    "sendmail": "メールを送る",
-    "mail": {
-      "name": "お名前",
-      "email": "メール",
-      "message": "メッセージ",
-      "send": "送信",
-      "sending": "送信中."
-    }
+  "about": {
+    "client": "お客様及びパートナー社"
   },
   "resume": {
-    "now": "STUDYING",
+    "now": "ハイライト",
     "work": "職歴",
     "education": "学歴",
     "lang": {
@@ -40,5 +31,17 @@
     },
     "expert-skills": "Technical Skills",
     "basic-skills": "Knowledgeable Skills"
+  },
+  "contact": {
+    "socialize": "ソーシャルネット",
+    "reach": "連絡情報",
+    "sendmail": "メールを送る",
+    "mail": {
+      "name": "お名前",
+      "email": "メール",
+      "message": "メッセージ",
+      "send": "送信",
+      "sending": "送信中."
+    }
   }
 }

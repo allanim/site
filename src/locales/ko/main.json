@@ -9,20 +9,11 @@
     "contact": "연락처",
     "search": "검색"
   },
-  "contact": {
-    "socialize": "소셜정보",
-    "reach": "연락정보",
-    "sendmail": "메일 보내기",
-    "mail": {
-      "name": "이름",
-      "email": "메일",
-      "message": "메세지",
-      "send": "보내기",
-      "sending": "송신중."
-    }
+  "about": {
+    "client": "고객과 파트너사"
   },
   "resume": {
-    "now": "STUDYING",
+    "now": "개요",
     "work": "경력",
     "education": "학력",
     "lang": {
@@ -40,5 +31,17 @@
     },
     "expert-skills": "Technical Skills",
     "basic-skills": "Knowledgeable Skills"
+  },
+  "contact": {
+    "socialize": "소셜정보",
+    "reach": "연락정보",
+    "sendmail": "메일 보내기",
+    "mail": {
+      "name": "이름",
+      "email": "메일",
+      "message": "메세지",
+      "send": "보내기",
+      "sending": "송신중."
+    }
   }
 }

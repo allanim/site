@@ -9,21 +9,12 @@
     "contact": "Contact",
     "search": "Search"
   },
-  "contact": {
-    "socialize": "Let's Socialize",
-    "reach": "Reach Me",
-    "sendmail": "Drop Me A Line",
-    "mail": {
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "send": "Send",
-      "sending": "Sending..."
-    }
+  "about": {
+    "client": "Client & Partner"
   },
   "resume": {
-    "now": "STUDYING",
-    "work": "WORK HISTORY",
+    "now": "HIGHLIGHTS",
+    "work": "WORK EXPERIENCE",
     "education": "EDUCATION",
     "lang": {
       "title": "Languages",
@@ -40,6 +31,18 @@
     },
     "t-skills": "Technical Skills",
     "k-skills": "Knowledgeable Skills"
+  },
+  "contact": {
+    "socialize": "Let's Socialize",
+    "reach": "Reach Me",
+    "sendmail": "Drop Me A Line",
+    "mail": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending..."
+    }
   }
 }
 
