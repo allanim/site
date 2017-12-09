@@ -5,3 +5,5 @@
 
 ##### Vertizen Corp. (Seoul, Korea)
 
+- Developed website
+- Experienced technologies : PHP, MySql, Flash, Action script

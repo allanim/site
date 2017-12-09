@@ -1,6 +1,6 @@
 
 ### 1997年3月　〜　2004年8月
 
-#### Bachelor of Science
+#### Bachelor of Science（工学）
 
-##### Chonbuk national university (全州, 韓国)
+##### 全北大学 (全州, 韓国)

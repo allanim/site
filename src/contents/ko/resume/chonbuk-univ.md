@@ -1,6 +1,6 @@
 
 ### 1997년 3월 – 2004년 8월
 
-#### BACHELOR OF SCIENCE
+#### BACHELOR OF SCIENCE (공학사)
 
 ##### 전북대학교 (전주, 대한민국)

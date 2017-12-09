@@ -4,4 +4,3 @@
 #### Object software certificate
 
 ##### Korea International Trade Association - IT Academy (Seoul, Korea)
-

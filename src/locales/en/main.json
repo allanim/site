@@ -29,8 +29,8 @@
       "expert": "Expert",
       "native": "Native"
     },
-    "t-skills": "Technical Skills",
-    "k-skills": "Knowledgeable Skills"
+    "t-skills": "Technical<br/>Skills",
+    "k-skills": "Knowledgeable<br/>Skills"
   },
   "contact": {
     "socialize": "Let's Socialize",
