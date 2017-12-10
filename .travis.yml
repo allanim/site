@@ -5,7 +5,6 @@ before_script:
   - npm install -g gulp-cli
 script:
   - gulp
-  - gulp deploy
 cache:
   directories:
     - "node_modules"
