@@ -1,7 +1,7 @@
 
 ### Jul 2014 - Aug 2017
 
-#### Software Engineer
+#### Senior Software Engineer
 
 ##### UZEN Co., Ltd. (Tokyo, Japan)
 

@@ -1,7 +1,7 @@
 
 ### Jul 2001 - Nov 2002
 
-#### Assistant developer
+#### Junior developer
 
 ##### Vertizen Corp. (Seoul, Korea)
 
