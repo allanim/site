@@ -228,7 +228,7 @@ gulp.task('build-asserts', function () {
 
 // Clean output directory
 gulp.task('clean', function () {
-    return gulp.src([config.temporary, config.publish], {read: false})
+    return gulp.src([config.temporary, config.publish, '.publish'], {read: false})
         .pipe(clean());
 });
 
