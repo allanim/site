@@ -72,11 +72,28 @@
 
         // set i18n lang
         i18next.changeLanguage(updateLang);
+
+        lang = updateLang;
     }
 
     function updateContent() {
         jqueryI18next.init(i18next, $);
         $("[data-i18n]").localize();
     }
+
+    $('a.linkedInLang').on('click',function() {
+
+        var orgUrl = $(this).data('orgLink');
+        if (!orgUrl) {
+            orgUrl = $(this).attr('href');
+            $(this).data('orgLink', orgUrl);
+        }
+
+        if (lang !== 'en') {
+            $(this).attr('href', orgUrl + '/' + lang);
+        } else {
+            $(this).attr('href', orgUrl);
+        }
+    });
 
 })(jQuery);
