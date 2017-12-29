@@ -30,7 +30,8 @@
       "native": "Native"
     },
     "t-skills": "Technical<br/>Skills",
-    "k-skills": "Knowledgeable<br/>Skills"
+    "k-skills": "Knowledgeable<br/>Skills",
+    "tools": "Favorite tools"
   },
   "contact": {
     "socialize": "Let's Socialize",
