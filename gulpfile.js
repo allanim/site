@@ -192,7 +192,8 @@ gulp.task('build-asserts', function () {
         config.bowerComponents + '/imagesloaded/imagesloaded.pkgd.min.*',
         config.bowerComponents + '/isotope/dist/isotope.pkgd.min.*',
         config.bowerComponents + '/jquery-validation/dist/jquery.validate.min.*',
-        config.bowerComponents + '/jarallax/dist/*.min.js'])
+        config.bowerComponents + '/jarallax/dist/*.min.js',
+        config.bowerComponents + '/instafeed.js/*.min.js'])
         .pipe(gulp.dest(config.publish + '/libs'))
         .pipe(size({title: 'copy asserts'}));
 

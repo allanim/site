@@ -1194,9 +1194,18 @@ var mapCanvas;
 		return new PageTransitions.nextPage(index);
 		};
 	// ------------------------------
-	
-	
-	
+
+
+	// instagram
+    var feed = new Instafeed({
+        get: 'user',
+        userId: 976918,
+        accessToken: '976918.66f13eb.d56123bac13b4c5eaad69dfdc3cbda4a',
+        target: 'instagram',
+        resolution: 'standard_resolution',
+        template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
+    });
+    feed.run();ß
 
 
 })(jQuery);
