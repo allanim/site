@@ -7,4 +7,4 @@
 
 - Operated intranet system.
 - Developed website & shopping cart
-- Experienced technologies : PHP, MySql
+- Experienced technologies: PHP, MySql
