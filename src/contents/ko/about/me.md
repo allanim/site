@@ -6,7 +6,7 @@ title: 안녕하세요!
 
 ##### 소프트웨어 엔지니어
 
-안녕하세요, 앨런(임성엽) 입니다.
+안녕하세요, 알랜(임성엽) 입니다.
 
 사는 곳은 [전주](https://ko.wikipedia.org/wiki/%EC%A0%84%EC%A3%BC%EC%8B%9C), [서울](https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C), 일본의 [도쿄](https://ko.wikipedia.org/wiki/%EB%8F%84%EC%BF%84_%EB%8F%84)를 거쳐 캐나다 [토론토](https://ko.wikipedia.org/wiki/%ED%86%A0%EB%A1%A0%ED%86%A0)에 머물고 있습니다. 학업은 [전북대학교](https://ko.wikipedia.org/wiki/%EC%A0%84%EB%B6%81%EB%8C%80%ED%95%99%EA%B5%90)에서 공학사를 취득 하였습니다.
 
