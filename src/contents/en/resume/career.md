@@ -3,7 +3,7 @@
 
 #### Software engineer 
 
-##### Worked location - Tokyo and Seoul
+##### Worked location - Toronto, Tokyo, Seoul
 
 - Architected & designed E-Commerce solution.
 - Specialized in base JAVA Programming.
