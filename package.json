@@ -35,5 +35,8 @@
   },
   "directories": {
     "test": "test"
+  },
+  "scripts": {
+    "postinstall": "bower install"
   }
 }

@@ -14,6 +14,8 @@ deploy:
   local_dir: dist
   github_token: $GITHUB_TOKEN
   skip_cleanup: true
+  keep-history: true
+  commit_message: "[AUTO BUILD] `date +'%Y-%m-%d %T (%:z)'`"
   repo: allanim/allanim.github.io
   target-branch: master
   on:
