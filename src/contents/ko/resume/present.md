@@ -1,11 +1,11 @@
 
 ### 현재
 
-#### 모바일어플리케이션과 영어 학습
+#### 모바일어플리케이션 학습
 
 ##### 토론토, 캐나다
 
-- Android, iOS, Kotlin, Swift, 그리고 영어 공부중
+- Android, iOS, Kotlin, Swift
 
 
 

@@ -19,4 +19,3 @@ deploy:
   target-branch: master
   on:
     branch: master
-    message: "[AUTO BUILD] `date +'%Y-%m-%d %T (%:z)'`"

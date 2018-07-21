@@ -1,11 +1,11 @@
 
 ### The Present
 
-#### Studying Mobile application & English
+#### Studying Mobile application
 
 ##### Toronto, Canada
 
-- Studying Android, iOS, Kotlin, Swift & English
+- Studying Android, iOS, Kotlin, Swift
 
 #### Software Engineer (Contract)
 
