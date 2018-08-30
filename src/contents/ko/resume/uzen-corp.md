@@ -10,4 +10,4 @@
 - 솔루션 시스템 구조 설계 및 주문/결제 모듈화 설계.
 - Gradle을 이용한 통합 빌드 시스템 개발.
 - Jenkins을 이용한 CI시스템 구축.
-- 경험 기술 : Spring, Spring boot, JPA, Vaadin, Elasticsearch, H2Database, Oracle, PostgreSql, MySql, TDD, Git, Agile methodology, DB modeling, Restful service, Micro service 등.
+- 경험 기술 : Spring, Spring boot, JPA, Vaadin, Elasticsearch, H2Database, Oracle, PostgreSQL, MySQL, TDD, Git, Agile methodology, DB modeling, Restful service, Micro service.

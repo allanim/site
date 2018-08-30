@@ -11,4 +11,4 @@
 - Researched & developed payment modules.
 - Using the Maven, developed integrated build system.
 - Using the Jenkins, managed CI system.
-- Experienced technologies : Java web application, Oracle, PostgreSql, SVN, Agile development, etc.
+- Experienced technologies : Java web application, Oracle, PostgreSQL, SVN, Agile development.

@@ -7,7 +7,7 @@
 
 - Studying Android, iOS, Kotlin, Swift
 
-#### Software Engineer (Contract)
+#### Software Engineer (Freelance)
 
 ##### Tokyo, Japan
 

@@ -11,4 +11,4 @@
 - 決済モジュールを研究及び開発。
 - Mavenを利用して統合ビルドシステムを開発。
 - Jenkinsを利用してCIシステムを構築。
-- 経験技術：Java web application, Oracle, PostgreSql, SVN, Agile development 等。
+- 経験技術：Java web application, Oracle, PostgreSQL, SVN, Agile methodology

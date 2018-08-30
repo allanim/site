@@ -11,4 +11,4 @@
 - ソリューションのシステム構造設計及び注文・決済モジュール設計。
 - Gradleを利用して統合ビルドシステムを開発。
 - Jenkinsを利用してCIシステムを構築。
-- 経験技術：Spring, Spring boot, JPA, Vaadin, Elasticsearch, H2Database, Oracle, PostgreSql, MySql, TDD, Git, Agile methodology, DB modeling, Restful service, Micro service 等。
+- 経験技術：Spring, Spring boot, JPA, Vaadin, Elasticsearch, H2Database, Oracle, PostgreSQL, MySQL, TDD, Git, Agile methodology, DB modeling, Restful service, Micro service

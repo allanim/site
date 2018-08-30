@@ -7,4 +7,4 @@
 
 - イントラネットメンテナンス。
 - ウェブサイト構築。
-- 経験技術：PHP, MySql, Flash, Action script
+- 経験技術：PHP, MySQL, Flash, Action Script

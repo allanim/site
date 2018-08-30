@@ -9,4 +9,4 @@
 - 기반 언어 : JAVA
 - CI시스템 구축：Git, Gitlab, Github, Jenkins
 - 빌드 시스템 개발：Gradle, Maven, Nexus, ArtiFactory
-- 결제 시스템 도입：PayPal, AuthorizeNet, Softbank payment, GMO payment, Veritrans 등
+- 결제 시스템 도입：PayPal, AuthorizeNet, Softbank payment, GMO payment, Veritrans

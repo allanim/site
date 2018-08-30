@@ -5,6 +5,6 @@
 
 ##### EPI Korea Corp. (Jeonju, Korea)
 
-- Operated intranet system.
-- Developed website & shopping cart
-- Experienced technologies: PHP, MySql
+- Operated as an intranet system.
+- Developed website & shopping cart.
+- Experienced technologies: PHP, MySQL.

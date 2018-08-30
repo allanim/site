@@ -11,4 +11,4 @@
 - 결제 모듈 연구 및 개발.
 - Maven을 이용한 통합 빌드 시스템 개발.
 - Jenkins을 이용한 CI시스템 구축.
-- 경험 기술 : Java web application, Oracle, PostgreSql, SVN, Agile development 등.
+- 경험 기술 : Java web application, Oracle, PostgreSQL, SVN, Agile development.
