@@ -1205,7 +1205,7 @@ var mapCanvas;
         resolution: 'standard_resolution',
         template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
     });
-    feed.run();ß
+    feed.run();
 
 
 })(jQuery);
