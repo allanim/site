@@ -174,6 +174,10 @@ gulp.task('build-asserts', function () {
     gulp.src(config.source + '/CNAME')
         .pipe(gulp.dest(config.publish));
 
+    // resume
+    gulp.src(config.source + '/resume/**')
+        .pipe(gulp.dest(config.publish + '/resume'));
+
     // css library
     gulp.src(config.source + '/css/bootstrap.min.css')
         .pipe(gulp.dest(config.publish + '/css'));
