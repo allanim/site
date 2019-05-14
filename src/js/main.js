@@ -222,7 +222,7 @@ var mapCanvas;
 
                 event.preventDefault();
                 $submit.text(i18next.t('contact.mail.sending'));
-                emailjs.sendForm("default_service","allan_contact","contact-form")
+                emailjs.sendForm("default_service","allan_contact",contactForm)
                     .then(function(){
                         contactForm.clearForm();
                         $submit.text(i18next.t('contact.mail.send'));
