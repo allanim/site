@@ -6,4 +6,4 @@
 ##### Freelancer (Tokyo, Japan) 
 
 - Designing & Developing E-Commerce Projects.
-- Working remote in Toronto
+

@@ -1,7 +1,7 @@
 
 ### The Present
 
-#### Studying Mobile application
+#### Postgraduate Certificate
 
 ##### Toronto, Canada
 
