@@ -5,11 +5,11 @@
 
 ##### Toronto, Canada
 
-- Studying Android, iOS, Kotlin, Swift
+- Studying Mobile Applications
 
 #### Software Engineer (Freelance)
 
 ##### Tokyo, Japan
 
-- Designing E-Commerce Projects.
+- Developing E-Commerce Projects.
 
